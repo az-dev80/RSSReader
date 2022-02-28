@@ -19,6 +19,10 @@
 		8146340427A2A86400D8C839 /* RSS_ReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8146340327A2A86400D8C839 /* RSS_ReaderUITests.m */; };
 		8146340627A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8146340527A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m */; };
 		8146341427A930A100D8C839 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8146341327A930A100D8C839 /* WebViewVC.m */; };
+		81C60BBF27CA72FE00B46F4F /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BBE27CA72FE00B46F4F /* Router.m */; };
+		81C60BC227CA736000B46F4F /* Bulder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BC127CA736000B46F4F /* Bulder.m */; };
+		81C60BC927CC05F000B46F4F /* FirstScenePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BC827CC05F000B46F4F /* FirstScenePresenter.m */; };
+		81C60BCC27CC0D0F00B46F4F /* FirstSceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BCB27CC0D0F00B46F4F /* FirstSceneModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,14 @@
 		8146340527A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSS_ReaderUITestsLaunchTests.m; sourceTree = "<group>"; };
 		8146341227A930A100D8C839 /* WebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewVC.h; sourceTree = "<group>"; };
 		8146341327A930A100D8C839 /* WebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewVC.m; sourceTree = "<group>"; };
+		81C60BBD27CA72FE00B46F4F /* Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
+		81C60BBE27CA72FE00B46F4F /* Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
+		81C60BC027CA736000B46F4F /* Bulder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bulder.h; sourceTree = "<group>"; };
+		81C60BC127CA736000B46F4F /* Bulder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bulder.m; sourceTree = "<group>"; };
+		81C60BC727CC05F000B46F4F /* FirstScenePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstScenePresenter.h; sourceTree = "<group>"; };
+		81C60BC827CC05F000B46F4F /* FirstScenePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstScenePresenter.m; sourceTree = "<group>"; };
+		81C60BCA27CC0D0F00B46F4F /* FirstSceneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstSceneModel.h; sourceTree = "<group>"; };
+		81C60BCB27CC0D0F00B46F4F /* FirstSceneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstSceneModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,20 +121,12 @@
 		814633D927A2A86100D8C839 /* RSS Reader */ = {
 			isa = PBXGroup;
 			children = (
-				814633DA27A2A86100D8C839 /* AppDelegate.h */,
-				814633DB27A2A86100D8C839 /* AppDelegate.m */,
-				814633DD27A2A86100D8C839 /* SceneDelegate.h */,
-				814633DE27A2A86100D8C839 /* SceneDelegate.m */,
-				814633E027A2A86100D8C839 /* ViewController.h */,
-				814633E127A2A86100D8C839 /* ViewController.m */,
-				8146341227A930A100D8C839 /* WebViewVC.h */,
-				8146341327A930A100D8C839 /* WebViewVC.m */,
-				814633E327A2A86100D8C839 /* Main.storyboard */,
+				81C60BBA27CA716B00B46F4F /* Support */,
+				81C60BBB27CA718800B46F4F /* Scenes */,
+				81C60BBC27CA71EC00B46F4F /* Others */,
 				814633E927A2A86300D8C839 /* Assets.xcassets */,
-				814633EB27A2A86300D8C839 /* LaunchScreen.storyboard */,
-				814633EE27A2A86300D8C839 /* Info.plist */,
-				814633EF27A2A86300D8C839 /* main.m */,
 				814633E627A2A86100D8C839 /* RSS_Reader.xcdatamodeld */,
+				814633EE27A2A86300D8C839 /* Info.plist */,
 			);
 			path = "RSS Reader";
 			sourceTree = "<group>";
@@ -142,6 +146,78 @@
 				8146340527A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m */,
 			);
 			path = "RSS ReaderUITests";
+			sourceTree = "<group>";
+		};
+		81C60BBA27CA716B00B46F4F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				814633DA27A2A86100D8C839 /* AppDelegate.h */,
+				814633DB27A2A86100D8C839 /* AppDelegate.m */,
+				814633DD27A2A86100D8C839 /* SceneDelegate.h */,
+				814633DE27A2A86100D8C839 /* SceneDelegate.m */,
+				81C60BBD27CA72FE00B46F4F /* Router.h */,
+				81C60BBE27CA72FE00B46F4F /* Router.m */,
+				81C60BC027CA736000B46F4F /* Bulder.h */,
+				81C60BC127CA736000B46F4F /* Bulder.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		81C60BBB27CA718800B46F4F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				81C60BC327CC049A00B46F4F /* FirstScene */,
+				8146341227A930A100D8C839 /* WebViewVC.h */,
+				8146341327A930A100D8C839 /* WebViewVC.m */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		81C60BBC27CA71EC00B46F4F /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				814633E327A2A86100D8C839 /* Main.storyboard */,
+				814633EB27A2A86300D8C839 /* LaunchScreen.storyboard */,
+				814633EF27A2A86300D8C839 /* main.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		81C60BC327CC049A00B46F4F /* FirstScene */ = {
+			isa = PBXGroup;
+			children = (
+				81C60BC427CC04AD00B46F4F /* Model */,
+				81C60BC527CC04BA00B46F4F /* View */,
+				81C60BC627CC04CC00B46F4F /* Presenter */,
+			);
+			path = FirstScene;
+			sourceTree = "<group>";
+		};
+		81C60BC427CC04AD00B46F4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81C60BCA27CC0D0F00B46F4F /* FirstSceneModel.h */,
+				81C60BCB27CC0D0F00B46F4F /* FirstSceneModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81C60BC527CC04BA00B46F4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				814633E027A2A86100D8C839 /* ViewController.h */,
+				814633E127A2A86100D8C839 /* ViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81C60BC627CC04CC00B46F4F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				81C60BC727CC05F000B46F4F /* FirstScenePresenter.h */,
+				81C60BC827CC05F000B46F4F /* FirstScenePresenter.m */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +351,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				814633F027A2A86300D8C839 /* main.m in Sources */,
+				81C60BC227CA736000B46F4F /* Bulder.m in Sources */,
 				814633E227A2A86100D8C839 /* ViewController.m in Sources */,
+				81C60BCC27CC0D0F00B46F4F /* FirstSceneModel.m in Sources */,
 				8146341427A930A100D8C839 /* WebViewVC.m in Sources */,
 				814633E827A2A86100D8C839 /* RSS_Reader.xcdatamodeld in Sources */,
+				81C60BC927CC05F000B46F4F /* FirstScenePresenter.m in Sources */,
 				814633DC27A2A86100D8C839 /* AppDelegate.m in Sources */,
+				81C60BBF27CA72FE00B46F4F /* Router.m in Sources */,
 				814633DF27A2A86100D8C839 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
