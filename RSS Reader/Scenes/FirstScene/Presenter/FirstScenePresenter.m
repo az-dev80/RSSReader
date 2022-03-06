@@ -12,7 +12,12 @@
 -(instancetype)initWithView: (id<FirstSceneViewProtocol>)view andModel:(id<FirstSceneModelProtocol>)model andRouter:(id<RouterProtocol>)router {
     self = [super init];
     if (self){
+        //[view retain];
+        //[model retain];
+        //[router retain];
+        
         _view = view;
+        
         _model = model;
         _router = router;
     }
@@ -40,4 +45,12 @@
 //        }
 //    }
 //}
+
+-(void)dealloc{
+    [_view release];
+    [_model release];
+    [_router release];
+    
+    [super dealloc];
+}
 @end

@@ -11,12 +11,19 @@
 @implementation Builder
 
 - (UIViewController *)createFirstScene:(Router *)router {
+    //[router retain];
     ViewController *view = [[ViewController alloc]init];
     FirstSceneModel *model = [FirstSceneModel new];
     FirstScenePresenter * presenter = [[FirstScenePresenter alloc]initWithView:view andModel:model andRouter:router];
     view.presenter = presenter;
+    [model release];
+    [presenter release];
     
-    return view;
+    return [view autorelease];
 }
 
+-(void)dealloc{
+    NSLog(@"Builder dealloc");
+    [super dealloc];
+}
 @end

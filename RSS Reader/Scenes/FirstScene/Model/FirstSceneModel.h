@@ -7,8 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol FirstSceneModelProtocol
-//    func getWallets(completion: @escaping (Result<[NSManagedObject]?, Error>) -> (Void))
+@protocol FirstSceneModelProtocol <NSObject>
+//    func getData(completion: @escaping (Result<[NSManagedObject]?, Error>) -> (Void))
 //    func save(name: String, color: String, currency: String)
 //    func deleteAllData(entity: String)
 @end

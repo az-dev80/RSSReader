@@ -13,6 +13,8 @@
 -(instancetype)initWithController: (UIViewController *)viewController andBuilder: (Builder<BuilderProtocol> *) builder {
     self = [super init];
     if (self){
+        [viewController retain];
+        [builder retain];
         _viewController = viewController;
         _builder = builder;
     }
@@ -21,9 +23,15 @@
 
 - (UIViewController *)intnialVC {
     self.viewController = [self.builder createFirstScene: self];
-    return self.viewController;
+    return [self.viewController autorelease];
 }
 
-
+-(void)dealloc {
+    NSLog(@"Router dealloc");
+    [_viewController release];
+    [_builder release];
+    
+    [super dealloc];
+}
 
 @end

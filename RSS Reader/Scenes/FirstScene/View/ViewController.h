@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "FirstScenePresenter.h"
 
-@interface ViewController : UIViewController <NSXMLParserDelegate, FirstSceneViewProtocol>
+@interface ViewController : UIViewController <FirstSceneViewProtocol>
 
 @property(nonatomic, retain)FirstScenePresenter<FirstSceneViewPresenterProtocol> *presenter;
 

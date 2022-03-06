@@ -23,9 +23,17 @@
     Builder *builder = [[Builder alloc]init];
     Router *router = [[Router alloc]initWithController:vc andBuilder:builder];
     vc = [router intnialVC];
+    NSLog(@"builder is %lu", builder.retainCount);
+    NSLog(@"router is %lu", router.retainCount);
+    NSLog(@"vc is %lu", vc.retainCount);
+    [builder release];
+    [router release];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
-
+    
+    //NSLog(@"builder is %lu", builder.retainCount);
+    //NSLog(@"router is %lu", router.retainCount);
+    NSLog(@"vc is %lu", vc.retainCount);
 //    mainVC = router.intnialVC() as! ViewController
 
 }
@@ -67,6 +75,7 @@
 }
 
 - (void)dealloc{
+    NSLog(@"Scene dealloc");
     [_window release];
     [super dealloc];
 }

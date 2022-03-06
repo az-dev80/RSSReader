@@ -9,13 +9,13 @@
 #import "Router.h"
 #import "FirstSceneModel.h"
 
-@protocol FirstSceneViewProtocol
+@protocol FirstSceneViewProtocol <NSObject>
     //func success()
     //func failure(error:Error)
 
 @end
 
-@protocol FirstSceneViewPresenterProtocol
+@protocol FirstSceneViewPresenterProtocol <NSObject>
 -(instancetype)initWithView: (id<FirstSceneViewProtocol>)view andModel:(id<FirstSceneModelProtocol>)model andRouter:(id<RouterProtocol>)router;
    // func    getWallets()
    // var     wallets:[NSManagedObject]? { get set }
@@ -26,7 +26,7 @@
 
 @interface FirstScenePresenter : NSObject<FirstSceneViewPresenterProtocol>
 
-@property(nonatomic, weak) id<FirstSceneViewProtocol> view;
+@property(nonatomic, retain) id<FirstSceneViewProtocol> view;
 @property(nonatomic, retain) id<RouterProtocol>router;
 @property(nonatomic, retain) id<FirstSceneModelProtocol>model;
 

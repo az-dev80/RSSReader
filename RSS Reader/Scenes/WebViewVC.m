@@ -24,15 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSURL *urlFromLink = [NSURL URLWithString:self.url];
-    WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
-    self.webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:theConfiguration];
+    //NSURL *urlFromLink = [NSURL URLWithString:self.url];
+    //WKWebViewConfiguration *theConfiguration = [[WKWebViewConfiguration alloc] init];
+    //self.webView = [[WKWebView alloc] initWithFrame:self.view.frame configuration:theConfiguration];
     //webView.navigationDelegate = self;
     //NSURL *nsurl=[NSURL URLWithString:urlFromLink];
-    NSURLRequest *nsrequest=[NSURLRequest requestWithURL: urlFromLink];
-    [self.webView loadRequest:nsrequest];
-    [self.view addSubview:self.webView];
-    [theConfiguration release];
+    //NSURLRequest *nsrequest=[NSURLRequest requestWithURL: urlFromLink];
+    //[self.webView loadRequest:nsrequest];
+    //[self.view addSubview:self.webView];
+    //[theConfiguration release];
 }
 
 - (void)dealloc{

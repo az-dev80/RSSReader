@@ -19,6 +19,8 @@
 		8146340427A2A86400D8C839 /* RSS_ReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8146340327A2A86400D8C839 /* RSS_ReaderUITests.m */; };
 		8146340627A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8146340527A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m */; };
 		8146341427A930A100D8C839 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8146341327A930A100D8C839 /* WebViewVC.m */; };
+		81740E7B27D237240048076B /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 81740E7A27D237240048076B /* RSSParser.m */; };
+		81740E7F27D239890048076B /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81740E7E27D239890048076B /* NewsItem.m */; };
 		81C60BBF27CA72FE00B46F4F /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BBE27CA72FE00B46F4F /* Router.m */; };
 		81C60BC227CA736000B46F4F /* Bulder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BC127CA736000B46F4F /* Bulder.m */; };
 		81C60BC927CC05F000B46F4F /* FirstScenePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BC827CC05F000B46F4F /* FirstScenePresenter.m */; };
@@ -63,6 +65,10 @@
 		8146340527A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSS_ReaderUITestsLaunchTests.m; sourceTree = "<group>"; };
 		8146341227A930A100D8C839 /* WebViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewVC.h; sourceTree = "<group>"; };
 		8146341327A930A100D8C839 /* WebViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewVC.m; sourceTree = "<group>"; };
+		81740E7927D237240048076B /* RSSParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
+		81740E7A27D237240048076B /* RSSParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
+		81740E7D27D239890048076B /* NewsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
+		81740E7E27D239890048076B /* NewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
 		81C60BBD27CA72FE00B46F4F /* Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
 		81C60BBE27CA72FE00B46F4F /* Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
 		81C60BC027CA736000B46F4F /* Bulder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bulder.h; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 		814633D927A2A86100D8C839 /* RSS Reader */ = {
 			isa = PBXGroup;
 			children = (
+				81740E7C27D238C00048076B /* DataModel */,
+				81740E7827D237000048076B /* Parser */,
 				81C60BBA27CA716B00B46F4F /* Support */,
 				81C60BBB27CA718800B46F4F /* Scenes */,
 				81C60BBC27CA71EC00B46F4F /* Others */,
@@ -146,6 +154,24 @@
 				8146340527A2A86400D8C839 /* RSS_ReaderUITestsLaunchTests.m */,
 			);
 			path = "RSS ReaderUITests";
+			sourceTree = "<group>";
+		};
+		81740E7827D237000048076B /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				81740E7927D237240048076B /* RSSParser.h */,
+				81740E7A27D237240048076B /* RSSParser.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		81740E7C27D238C00048076B /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				81740E7D27D239890048076B /* NewsItem.h */,
+				81740E7E27D239890048076B /* NewsItem.m */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		81C60BBA27CA716B00B46F4F /* Support */ = {
@@ -359,7 +385,9 @@
 				81C60BC927CC05F000B46F4F /* FirstScenePresenter.m in Sources */,
 				814633DC27A2A86100D8C839 /* AppDelegate.m in Sources */,
 				81C60BBF27CA72FE00B46F4F /* Router.m in Sources */,
+				81740E7F27D239890048076B /* NewsItem.m in Sources */,
 				814633DF27A2A86100D8C839 /* SceneDelegate.m in Sources */,
+				81740E7B27D237240048076B /* RSSParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
