@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import "WebViewVC.h"
 #import "RSSParser.h"
+#import "DetailsVC.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -116,6 +117,7 @@
     }
     ;
     cell.textLabel.text = [self.feeds[indexPath.row] newsTitle];
+    cell.accessoryType = UITableViewCellAccessoryDetailButton;
     return  cell ;
 }
 
@@ -126,11 +128,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSString *string = [self.feeds[indexPath.row] newsLink];
-    NSURL *urlFromLink = [NSURL URLWithString:string];
-    [[UIApplication sharedApplication] openURL:urlFromLink options:nil completionHandler:nil];
+//    NSURL *urlFromLink = [NSURL URLWithString:string];
+//    [[UIApplication sharedApplication] openURL:urlFromLink options:nil completionHandler:nil];
     
-    //WebViewVC *vc = [[WebViewVC alloc]initWithUrl:string];
-    //[self presentViewController:[vc autorelease] animated:YES completion:nil];
+    WebViewVC *vc = [[WebViewVC alloc]initWithUrl:string];
+    [self presentViewController:[vc autorelease] animated:YES completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    DetailsVC *vc = [[DetailsVC alloc]initWithTitle:[self.feeds[indexPath.row] newsTitle] andDescription:[self.feeds[indexPath.row] newsDescription] andDate:[self.feeds[indexPath.row] newsDate]];
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 -(void)dealloc{

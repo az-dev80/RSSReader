@@ -12,6 +12,7 @@
 @property(nonatomic, copy) NSString *newsTitle;
 @property(nonatomic, copy) NSString *newsDescription;
 @property(nonatomic, copy) NSString *newsLink;
+@property(nonatomic, copy) NSString *newsDate;
 -(instancetype)initWithDictionary: (NSDictionary *) dictionary;
 @end
 

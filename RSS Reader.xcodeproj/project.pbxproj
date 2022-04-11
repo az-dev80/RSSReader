@@ -21,6 +21,7 @@
 		8146341427A930A100D8C839 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8146341327A930A100D8C839 /* WebViewVC.m */; };
 		81740E7B27D237240048076B /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 81740E7A27D237240048076B /* RSSParser.m */; };
 		81740E7F27D239890048076B /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 81740E7E27D239890048076B /* NewsItem.m */; };
+		81974EF127FDB0310074105F /* DetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 81974EF027FDB0310074105F /* DetailsVC.m */; };
 		81C60BBF27CA72FE00B46F4F /* Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BBE27CA72FE00B46F4F /* Router.m */; };
 		81C60BC227CA736000B46F4F /* Bulder.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BC127CA736000B46F4F /* Bulder.m */; };
 		81C60BC927CC05F000B46F4F /* FirstScenePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C60BC827CC05F000B46F4F /* FirstScenePresenter.m */; };
@@ -69,6 +70,8 @@
 		81740E7A27D237240048076B /* RSSParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
 		81740E7D27D239890048076B /* NewsItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
 		81740E7E27D239890048076B /* NewsItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
+		81974EEF27FDB0310074105F /* DetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsVC.h; sourceTree = "<group>"; };
+		81974EF027FDB0310074105F /* DetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsVC.m; sourceTree = "<group>"; };
 		81C60BBD27CA72FE00B46F4F /* Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Router.h; sourceTree = "<group>"; };
 		81C60BBE27CA72FE00B46F4F /* Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Router.m; sourceTree = "<group>"; };
 		81C60BC027CA736000B46F4F /* Bulder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bulder.h; sourceTree = "<group>"; };
@@ -174,6 +177,24 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		81974EED27FDAFF00074105F /* WebScene */ = {
+			isa = PBXGroup;
+			children = (
+				8146341227A930A100D8C839 /* WebViewVC.h */,
+				8146341327A930A100D8C839 /* WebViewVC.m */,
+			);
+			path = WebScene;
+			sourceTree = "<group>";
+		};
+		81974EEE27FDB0010074105F /* DetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				81974EEF27FDB0310074105F /* DetailsVC.h */,
+				81974EF027FDB0310074105F /* DetailsVC.m */,
+			);
+			path = DetailsScene;
+			sourceTree = "<group>";
+		};
 		81C60BBA27CA716B00B46F4F /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,8 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				81C60BC327CC049A00B46F4F /* FirstScene */,
-				8146341227A930A100D8C839 /* WebViewVC.h */,
-				8146341327A930A100D8C839 /* WebViewVC.m */,
+				81974EEE27FDB0010074105F /* DetailsScene */,
+				81974EED27FDAFF00074105F /* WebScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -386,6 +407,7 @@
 				814633DC27A2A86100D8C839 /* AppDelegate.m in Sources */,
 				81C60BBF27CA72FE00B46F4F /* Router.m in Sources */,
 				81740E7F27D239890048076B /* NewsItem.m in Sources */,
+				81974EF127FDB0310074105F /* DetailsVC.m in Sources */,
 				814633DF27A2A86100D8C839 /* SceneDelegate.m in Sources */,
 				81740E7B27D237240048076B /* RSSParser.m in Sources */,
 			);

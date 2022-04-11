@@ -10,25 +10,30 @@
 
 @implementation Router
 
--(instancetype)initWithController: (UIViewController *)viewController andBuilder: (Builder<BuilderProtocol> *) builder {
+-(instancetype)initWithNavController: (UINavigationController *)navController andBuilder: (Builder<BuilderProtocol> *) builder {
     self = [super init];
     if (self){
-        [viewController retain];
+        [navController retain];
         [builder retain];
-        _viewController = viewController;
+        _navController = navController;
         _builder = builder;
     }
     return self;
 }
 
-- (UIViewController *)intnialVC {
-    self.viewController = [self.builder createFirstScene: self];
-    return [self.viewController autorelease];
+- (void)intnialVC {
+    UIViewController *vc = [self.builder createFirstScene: self];
+    self.navController.viewControllers = @[vc];
+}
+
+- (void)showWebviewVC {
+    UIViewController *vc = [self.builder createFirstScene: self];
+    self.navController.viewControllers = @[vc];
 }
 
 -(void)dealloc {
     NSLog(@"Router dealloc");
-    [_viewController release];
+    [_navController release];
     [_builder release];
     
     [super dealloc];

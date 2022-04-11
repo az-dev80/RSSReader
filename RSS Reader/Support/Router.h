@@ -11,12 +11,14 @@
 
 @protocol RouterProtocol <NSObject>
 
--(UIViewController *)intnialVC;
+-(void)intnialVC;
+-(void)showWebviewVC;
+
 @end
 
 @interface Router: NSObject<RouterProtocol>
--(instancetype)initWithController: (UIViewController *)viewController andBuilder: (Builder<BuilderProtocol> *) builder;
-@property(nonatomic, retain) UIViewController *viewController;
+-(instancetype)initWithNavController: (UINavigationController *)navController andBuilder: (Builder<BuilderProtocol> *) builder;
+@property(nonatomic, retain) UINavigationController *navController;
 @property(nonatomic, retain) Builder<BuilderProtocol> *builder;
 
 @end

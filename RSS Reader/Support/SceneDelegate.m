@@ -19,21 +19,22 @@
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
-    UIViewController * vc = [[ViewController alloc]init];
+    //UIViewController * vc = [[ViewController alloc]init];
+    UINavigationController *navVC = [[UINavigationController alloc]init];
     Builder *builder = [[Builder alloc]init];
-    Router *router = [[Router alloc]initWithController:vc andBuilder:builder];
-    vc = [router intnialVC];
-    NSLog(@"builder is %lu", builder.retainCount);
-    NSLog(@"router is %lu", router.retainCount);
-    NSLog(@"vc is %lu", vc.retainCount);
+    Router *router = [[Router alloc]initWithNavController:navVC andBuilder:builder];
+    [router intnialVC];
+    //NSLog(@"builder is %lu", builder.retainCount);
+    //NSLog(@"router is %lu", router.retainCount);
+    //NSLog(@"vc is %lu", vc.retainCount);
     [builder release];
     [router release];
-    self.window.rootViewController = vc;
+    self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];
     
     //NSLog(@"builder is %lu", builder.retainCount);
     //NSLog(@"router is %lu", router.retainCount);
-    NSLog(@"vc is %lu", vc.retainCount);
+    //NSLog(@"vc is %lu", vc.retainCount);
 //    mainVC = router.intnialVC() as! ViewController
 
 }

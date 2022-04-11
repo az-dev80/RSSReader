@@ -16,6 +16,7 @@
         _newsTitle = [dictionary[@"title"] copy];
         _newsDescription = [dictionary[@"description"] copy];
         _newsLink = [dictionary[@"link"] copy];
+        _newsDate = [dictionary[@"pubDate"] copy];
     }
     return self;
 }
@@ -25,6 +26,7 @@
     [_newsTitle release];
     [_newsDescription release];
     [_newsLink release];
+    [_newsDate release];
     
     [super dealloc];
 }
