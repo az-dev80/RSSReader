@@ -6,29 +6,38 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Router.h"
-#import "FirstSceneModel.h"
+#import "Alert.h"
+@protocol DataManagerProtocol;
+@protocol RouterProtocol;
 
+#pragma mark --- View Protocol
 @protocol FirstSceneViewProtocol <NSObject>
-    //func success()
-    //func failure(error:Error)
-
+-(void)showAlert:(UIAlertController *)alert;
+-(void)setupData:(NSArray *)model;
 @end
 
+#pragma mark --- Presenter Protocol
 @protocol FirstSceneViewPresenterProtocol <NSObject>
--(instancetype)initWithView: (id<FirstSceneViewProtocol>)view andModel:(id<FirstSceneModelProtocol>)model andRouter:(id<RouterProtocol>)router;
-   // func    getWallets()
-   // var     wallets:[NSManagedObject]? { get set }
-   // func    tapPlusButton()
-   // func    openWalletDetailsVC(wallet: NSManagedObject, walletIndex: IndexPath)
-   // func    deleteAllWallets()
+
+@property(nonatomic, weak) id<FirstSceneViewProtocol> view;
+@property(nonatomic, retain) id<RouterProtocol>router;
+@property(nonatomic, retain) id<DataManagerProtocol>dataManager;
+
+-(instancetype)initWithView: (id<FirstSceneViewProtocol>)view router:(id<RouterProtocol>)router;
+-(void)showAlertInView:(UIAlertController *)alert;
+-(void)provideData;
+-(void)obtainFeeds:(NSArray *)feeds;
+-(void)showDetailsVC:(NSIndexPath *)indexPath;
+-(void)showWebView:(NSIndexPath *)indexPath;
+
 @end
 
+#pragma mark --- Presenter Class
 @interface FirstScenePresenter : NSObject<FirstSceneViewPresenterProtocol>
 
-@property(nonatomic, retain) id<FirstSceneViewProtocol> view;
+@property(nonatomic, weak) id<FirstSceneViewProtocol>view;
 @property(nonatomic, retain) id<RouterProtocol>router;
-@property(nonatomic, retain) id<FirstSceneModelProtocol>model;
+@property(nonatomic, retain)id<DataManagerProtocol>dataManager;
 
 @end
 

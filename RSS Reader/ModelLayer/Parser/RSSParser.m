@@ -44,18 +44,18 @@
     if(self.parsedString){
         [self.itemDictionary setObject: self.parsedString forKey: elementName];
         
-        [_parsedString release];
-        _parsedString = nil;
-        //self.parsedString = nil;
+//        [_parsedString release];
+//        _parsedString = nil;
+        self.parsedString = nil;
     }
     if([elementName isEqualToString:@"item"]){
         NewsItem *newsItem = [[NewsItem alloc]initWithDictionary: self.itemDictionary];
         [self.items addObject: newsItem];
         [newsItem release];
         
-        [_itemDictionary release];
-        _itemDictionary = nil;
-        //self.itemDictionary = nil;
+//        [_itemDictionary release];
+//        _itemDictionary = nil;
+        self.itemDictionary = nil;
         //NSLog(@"parsedString DidElemenet is %lu", newsItem.retainCount);
     }
  }
@@ -81,25 +81,18 @@
 }
 
 -(void)reset{
-    _parsedString = nil;
-    _items = nil;
-    _itemDictionary = nil;
-    _completion = nil;
+    self.parsedString = nil; // via self
+    self.items = nil;
+    self.itemDictionary = nil;
+    self.completion = nil;
 }
 
 
 -(void)dealloc{
     NSLog(@"RSSParser dealloc");
     [_parsedString release];
-    _parsedString = nil;
-    
     [_items release];
-    _items = nil;
-    
     [_itemDictionary release];
-    _itemDictionary = nil;
-    
-    [_completion release];
     _completion = nil;
     
     [super dealloc];

@@ -6,50 +6,45 @@
 //
 
 #import "FirstScenePresenter.h"
+#import "Router.h"
+#import "DataManager.h"
 
 @implementation FirstScenePresenter
 
--(instancetype)initWithView: (id<FirstSceneViewProtocol>)view andModel:(id<FirstSceneModelProtocol>)model andRouter:(id<RouterProtocol>)router {
+-(instancetype)initWithView: (id<FirstSceneViewProtocol>)view router:(id<RouterProtocol>)router {
     self = [super init];
     if (self){
-        //[view retain];
-        //[model retain];
-        //[router retain];
-        
         _view = view;
-        
-        _model = model;
-        _router = router;
+        _router = [router retain];
     }
     return  self;
 }
 
-//required init(view: WalletsViewProtocol, storageService: WalletsModelInput, router: RouterProtocol) {
-//    self.view = view
-//    self.storageService = storageService
-//    self.router = router
-//    getWallets()
-//}
-//
-//func getWallets() {
-//    storageService.getWallets { [weak self] result in
-//        guard let self = self else {return}
-//        DispatchQueue.main.async {
-//            switch result {
-//            case .success(let wallets):
-//                self.wallets = wallets
-//                self.view?.success()
-//            case .failure(let error):
-//                self.view?.failure(error:error)
-//            }
-//        }
-//    }
-//}
+-(void)showAlertInView:(UIAlertController *)alert {
+    [self.view showAlert: alert];
+}
+
+- (void)provideData {
+    [self.dataManager prepareData];
+}
+
+-(void)obtainFeeds:(NSArray *)feeds{
+    [self.view setupData:feeds];
+}
+
+- (void)showDetailsVC:(NSIndexPath *)indexPath {
+    [self.router showDetailsVC: indexPath];
+}
+
+-(void)showWebView:(NSIndexPath *)indexPath{
+    [self.router showWebView: indexPath];
+}
 
 -(void)dealloc{
-    [_view release];
-    [_model release];
+    NSLog(@"FirstScene presenter dealloc");
+    _view = nil;;
     [_router release];
+    //[_dataManager release];
     
     [super dealloc];
 }

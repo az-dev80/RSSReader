@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "Router.h"
+#import "Bulder.h"
 
 @interface SceneDelegate ()
 
@@ -21,17 +22,17 @@
     self.window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
     //UIViewController * vc = [[ViewController alloc]init];
     UINavigationController *navVC = [[UINavigationController alloc]init];
-    Builder *builder = [[Builder alloc]init];
+    Builder *builder = [Builder new];
     Router *router = [[Router alloc]initWithNavController:navVC andBuilder:builder];
     [router intnialVC];
     //NSLog(@"builder is %lu", builder.retainCount);
     //NSLog(@"router is %lu", router.retainCount);
     //NSLog(@"vc is %lu", vc.retainCount);
-    [builder release];
-    [router release];
+    
     self.window.rootViewController = navVC;
     [self.window makeKeyAndVisible];
-    
+    [builder release];
+    [router release];
     //NSLog(@"builder is %lu", builder.retainCount);
     //NSLog(@"router is %lu", router.retainCount);
     //NSLog(@"vc is %lu", vc.retainCount);

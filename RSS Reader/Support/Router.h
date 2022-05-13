@@ -11,13 +11,17 @@
 
 @protocol RouterProtocol <NSObject>
 
+@property(nonatomic, retain) UINavigationController *navController;
+@property(nonatomic, retain) Builder<BuilderProtocol> *builder;
+-(instancetype)initWithNavController: (UINavigationController *)navController andBuilder: (Builder<BuilderProtocol>*)builder;
 -(void)intnialVC;
--(void)showWebviewVC;
+-(void)showWebView:(NSIndexPath *)indexPath;
+-(void)showDetailsVC:(NSIndexPath *)indexPath;
 
 @end
 
 @interface Router: NSObject<RouterProtocol>
--(instancetype)initWithNavController: (UINavigationController *)navController andBuilder: (Builder<BuilderProtocol> *) builder;
+
 @property(nonatomic, retain) UINavigationController *navController;
 @property(nonatomic, retain) Builder<BuilderProtocol> *builder;
 

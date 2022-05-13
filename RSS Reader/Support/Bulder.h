@@ -7,11 +7,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@class Router;
+
+@protocol RouterProtocol;
 
 @protocol BuilderProtocol
 
--(UIViewController *)createFirstScene:(Router *) router;
+-(UIViewController *)createFirstScene:(id<RouterProtocol>)router;
+-(UIViewController *)createDetailsScene:(id<RouterProtocol>)router withIndexPath:(NSIndexPath *)indexPath;
+-(UIViewController *)createWebViewScene:(id<RouterProtocol>)router withIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

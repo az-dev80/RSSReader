@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController <FirstSceneViewProtocol>
 
-@property(nonatomic, retain)FirstScenePresenter<FirstSceneViewPresenterProtocol> *presenter;
+@property(nonatomic, retain)id<FirstSceneViewPresenterProtocol> presenter;
 
 @end
 
